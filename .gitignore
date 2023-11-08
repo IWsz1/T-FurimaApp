@@ -29,3 +29,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+# .DS_Storeという不要なファイルをgitの管理から消す
+.Ds_Store
