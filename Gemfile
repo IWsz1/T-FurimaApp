@@ -70,3 +70,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+# Rubocop導入 コード解析修正リマインドツール
+group :development do
+  gem 'rubocop', require: false
+end
