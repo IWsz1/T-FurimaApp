@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     # deviseの受け取れるパラメーターの宣言に新しいパラメーターを追加するメソッド
     # 第一引数にサインインサインアップアカウント情報の更新のどれかを記載　第三引数に追加したいカラム名のキーを記述する
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:last_name,:first_name,:last_name_kana,:first_name_kana,:birthday])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday])
   end
-
 end
