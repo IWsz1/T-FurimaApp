@@ -50,7 +50,7 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%# collection_selectでプルダウンを作成できる 第一引数に保存先のカラム名 第二引数に表示するために必要な配列データ 第三引数に保存するカラム名 第四引数に表示するカラム名 第五引数にオプション(include_blankとすると先頭に値なしの選択肢を作ってくれる) 第六引数にclass等のhtmlオプション %>
+        <%# collection_selectでプルダウンを作成できる 第一引数に保存先のカラム名 第二引数に表示するために必要な配列データ(active_hashの名前はclassで指定したパスカルケースで記述) 第三引数に保存するカラム名 第四引数に表示するカラム名 第五引数にオプション(include_blankとすると先頭に値なしの選択肢を作ってくれる) 第六引数にclass等のhtmlオプション %>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           商品の状態
@@ -72,7 +72,7 @@
           配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:shipping_cost_id, Shipping_cost.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%= f.collection_select(:shipping_cost_id, ShippingCost.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
@@ -82,7 +82,7 @@
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:shipping_date_id, Shipping_date.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:shipping_date_id, ShippingDate.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
     <%# /配送について %>
