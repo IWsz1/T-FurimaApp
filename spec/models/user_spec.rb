@@ -22,27 +22,27 @@ RSpec.describe User, type: :model do
         @user.password = "testtest"
         @user.password_confirmation = "testtest"
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password Password is invalid. Include both letters and numbers"
+        expect(@user.errors.full_messages).to include "Password is invalid. Include both letters and numbers"
       end
       it "名字が全角日本語でないと保存できない" do
         @user.last_name = "asaka"
         @user.valid?
-        expect(@user.errors.full_messages).to include 'Last name Last name is invalid. Input full-width characters'
+        expect(@user.errors.full_messages).to include 'Last name is invalid. Input full-width characters'
       end
       it "名前が全角日本語でないと保存できない" do
         @user.first_name = "sora"
         @user.valid?
-        expect(@user.errors.full_messages).to include 'First name First name is invalid. Input full-width characters'
+        expect(@user.errors.full_messages).to include 'First name is invalid. Input full-width characters'
       end
       it "名字が全角カタカナでないと保存できない" do
         @user.last_name_kana = "浅賀"
         @user.valid?
-        expect(@user.errors.full_messages).to include 'Last name kana Last name kana is invalid. Input full-width katakana characters'
+        expect(@user.errors.full_messages).to include 'Last name kana is invalid. Input full-width katakana characters'
       end
       it "名前が全角カタカナでないと保存できない" do
         @user.first_name_kana = "宇宙"
         @user.valid?
-        expect(@user.errors.full_messages).to include 'First name kana First name kana is invalid. Input full-width katakana characters'
+        expect(@user.errors.full_messages).to include 'First name kana is invalid. Input full-width katakana characters'
       end
       
       it '生年月日が空だと保存できない' do
