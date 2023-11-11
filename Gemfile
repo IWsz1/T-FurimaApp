@@ -87,3 +87,5 @@ gem "pry-rails"
 # 画像取扱用
 gem 'mini_magick'
 gem 'image_processing'
+
+gem "active_hash"
