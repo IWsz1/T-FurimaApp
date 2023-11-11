@@ -15,11 +15,11 @@ class Item < ApplicationRecord
     validates :image
     validates :name, length: { maximum: 40 }
     validates :explanation, length: { maximum: 1000 }
-    validates :name
-    validates :name
-    validates :name
-    validates :name
-    validates :name
+    validates :category_id
+    validates :quality_id
+    validates :shipping_cost_id
+    validates :area_id
+    validates :shipping_date_id
     # only_integerで整数のみに
     # 後半で1以上1000000以下の数字にバリデーション
     validates :price,numericality: {only_integer:true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
