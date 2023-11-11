@@ -18,6 +18,7 @@ class User < ApplicationRecord
     # 全角カタカナ
     validates :last_name_kana, format: { with: /\A[ァ-ヶー]+\z/, message: 'Last name kana is invalid. Input full-width katakana characters'}
     validates :first_name_kana, format: { with: /\A[ァ-ヶー]+\z/, message: 'First name kana is invalid. Input full-width katakana characters'}
+    # ---のまま送信を行うと未入力と検知を行いエラーが出る
     validates :birthday
   end
 end
