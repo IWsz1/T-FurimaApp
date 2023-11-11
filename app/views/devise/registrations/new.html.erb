@@ -77,17 +77,26 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-birth-wrap'>
+      <%# 年月日のリストをプルダウンにしてHTMLの形式で表示 %>
       <%= raw sprintf(
+                  # 年月日のリストを作成
                   f.date_select(
+                    # 紐づくカラム
                     :birthday,
                     class:'select-birth',
                     id:"birth-date",
+                    # 月を英単語から数字に変換
                     use_month_numbers: true,
+                    # 初めの選択項目
                     prompt:'--',
+                    # スタートの年
                     start_year: 1930,
+                    # 終わりの年
                     end_year: (Time.now.year - 5),
+                    # 年月日の間に年と月を入れる設定
                     date_separator: '%s'),
-                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                    # 全ての終わりに日を表示
+                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>          
     </div>
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
   </div>
