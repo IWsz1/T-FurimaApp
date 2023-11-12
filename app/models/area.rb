@@ -20,4 +20,5 @@ class Area < ActiveHash::Base
   # 下記記述でIDしか入っていないitemからもジャンルの名前を呼びだせる
   include ActiveHash::Associations
   has_many :items
+  has_many :OrderAddresses
 end
