@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_one :order
   # 画像モデルとつながる
   has_one_attached :image
 
