@@ -1,4 +1,5 @@
-window.addEventListener("turbo:load",item);
+// 該当のIDが存在しないページを開くとコンソールにエラーが出る
+
 function item (){
   // 価格の入力フォームを取得
   const price_form = document.getElementById("item-price")
@@ -22,3 +23,4 @@ function item (){
     profit.innerHTML = profit_value.toLocaleString()
   })
 }
+  window.addEventListener("turbo:load",item);
