@@ -89,3 +89,9 @@ gem 'mini_magick'
 gem 'image_processing'
 
 gem "active_hash"
+
+# コントローラーで定義した変数をjsで使えるようにする
+gem "gon"
+
+# payjpの決済処理用
+gem "payjp"

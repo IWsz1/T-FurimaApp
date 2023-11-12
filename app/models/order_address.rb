@@ -2,7 +2,7 @@ class OrderAddress
   # 下記読み込みでFormオブジェクトが利用できるようになる
   include ActiveModel::Model
   # フォームオブジェクトに下記仮想カラムを追加
-  attr_accessor :user_id, :item_id, :postalcode, :prefecture_id, :city, :block, :building, :phone_number
+  attr_accessor :user_id, :item_id, :postalcode, :prefecture_id, :city, :block, :building, :phone_number, :token
 
   # # フォームオブジェクトではactiveHashとのアソシエーションがいらない？
   # # 下記の記述でActiveHashとmodelをアソシエーションで結ぶ
@@ -20,9 +20,10 @@ class OrderAddress
     # アソシエーションで自動的についていたpresenceをformオブジェクトのバリデーションでは追記
     validates :user_id
     validates :item_id
+    validates :token
   end
   def save
-    @order = Order.create(item_id: item_id, user_id: user_id)
+    @order = Order.create(item_id: item_id, user_id: user_id,token: token)
     # ストロングパラメーターでは無いためmergeは使わない
     Address.create(postalcode: postalcode, prefecture_id: prefecture_id,city: city, block:block,building:building,phone_number:phone_number,order_id:@order.id)
   end
