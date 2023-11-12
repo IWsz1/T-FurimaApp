@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_12_063214) do
     t.string "city"
     t.string "block"
     t.string "building"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_addresses_on_order_id"
