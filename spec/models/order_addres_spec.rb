@@ -36,7 +36,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include 'Prefecture must be other than 1'
       end
       it '市区町村が空だと保存できない' do
-        @order_address.city = nil
+        @order_address.city = ""
         @order_address.valid?
         # include 期待結果が含まれているか検証
         expect(@order_address.errors.full_messages).to include "City can't be blank"
@@ -52,7 +52,7 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.phone_number = ""
         @order_address.valid?
         # include 期待結果が含まれているか検証
-        expect(@order_address.errors.full_messages).to include "Phone_number can't be blank"
+        expect(@order_address.errors.full_messages).to include "Phone number can't be blank"
       end
       it '電話番号に-が入ると保存できない' do
         @order_address.phone_number = "080-1234-12"
