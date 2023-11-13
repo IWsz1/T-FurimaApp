@@ -14,7 +14,6 @@ class OrderAddress
     validates :prefecture_id,numericality:{other_than:1}
     validates :city
     validates :block
-    validates :phone_number
     # ハイフンを認めない半角数字のみ許可 htmlで11桁指定にはされてる
     validates :phone_number, numericality: { only_integer: true, message: 'is invalid. Input numbers only' }
     # アソシエーションで自動的についていたpresenceをformオブジェクトのバリデーションでは追記
