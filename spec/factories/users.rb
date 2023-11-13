@@ -6,10 +6,10 @@ FactoryBot.define do
     # ランダムで生成する際、英数字になるよう'1a'追加 6文字以下
     password { '1a' + Faker::Internet.unique.password(min_length: 6) }
     password_confirmation { password }
-    last_name{"浅賀"}
-    first_name{"宇宙"}
-    last_name_kana{"アサカ"}
-    first_name_kana {"ソラ"}
+    last_name{"山田"}
+    first_name{"太郎"}
+    last_name_kana{"ヤマダ"}
+    first_name_kana {"タロウ"}
     birthday { Faker::Date.birthday }
   end
 end

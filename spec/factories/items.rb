@@ -7,6 +7,7 @@ FactoryBot.define do
       item.image.attach(io: File.open('app/assets/images/item-sample.png'), filename: 'item_sample.png')
     end
     name { Faker::Name.name }
+    # Loremがfakerに登録されたランダムな単語、sentenceで文章を作成
     explanation { Faker::Lorem.sentence }
     category_id { Faker::Number.between(from: 1, to: 10) }
     quality_id { Faker::Number.between(from: 1, to: 6) }
