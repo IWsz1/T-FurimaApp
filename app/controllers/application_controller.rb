@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth
+  # テスト時はBasic認証を行わない設定
+  before_action :basic_auth # if Rails.env.production?
   
   # jsに公開鍵を直接変数で送る
   # ビューでの記述も必要

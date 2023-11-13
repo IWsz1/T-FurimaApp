@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  # アクションを行おうとした際にログインされてなかったらログインページに遷移する設定
+  before_action :authenticate_user!
+
   def index
     # 親コントローラーのidのため[:id]でなく[:item_id]
     @item = Item.find(params[:item_id])
