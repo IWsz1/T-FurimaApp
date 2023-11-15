@@ -95,3 +95,6 @@ gem "gon"
 
 # payjpの決済処理用
 gem "payjp"
+
+# S3を使用するためのGem
+gem "aws-sdk-s3", require: false
